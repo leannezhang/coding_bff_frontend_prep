@@ -1,3 +1,4 @@
+/* Step 4: Add Styling */
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -6,7 +7,6 @@
     justify-content: center;
 }
 
-/* Step 3: add style */
 img {
    height: auto;
    width: 100%;
