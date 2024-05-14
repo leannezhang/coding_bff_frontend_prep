@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Grid Layout</title>
+<style>
+   body {
+    margin: 0; /** set marign 0 ** to cover entirely */ 
+    font-size: 30px;
+    text-align: center;
+   }
+
+  .container {
+    grid-template-columns: auto 1fr auto; /* Defines three columns */
+    grid-template-rows: auto 1fr auto; /* Define three rows **/
+    display: grid;
+    min-height: 100vh; /* set a min height so footer can go to the buttom */
+  }
+  
+  .header {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    grid-column: 1/-1; /* stretch all the way */
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+  }
+
+  .content {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+  }
+
+  .right {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+  }
+
+  .footer {
+    grid-column: 1/-1;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+</style>
+</head>
+<body>
+<div class="container">
+    <header class="header">HEADER</header>
+    <div class="menu">MENU</div>
+    <main class="content">CONTENT</main>
+    <div class="right">RIGHT</div>
+    <footer class="footer">FOOTER</footer>
+</div>
+</body>
+</html>
+
