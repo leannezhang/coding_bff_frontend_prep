@@ -41,12 +41,18 @@ let todos = [];
 let total = 0;
 const LIMIT = 20;
 let skip = 0;
+const todoElement = document.querySelector(".todoContainers");
+const totalElement = document.querySelector('.numofTodo');
+const loadMoreBtn = document.querySelector('button');
 
 const getData = async () => {
     
     const URL = `https://dummyjson.com/todos?limit=${LIMIT}&skip=${skip*LIMIT}`;
 
     try {
+        loadMoreBtn.disabled = true;
+        loadMoreBtn.textContent = 'loading'
+
         const response = await fetch(URL);
         const data = await response.json(); //jsonify the response
         const todos = data.todos; // manipulate data here
@@ -54,12 +60,11 @@ const getData = async () => {
     }
     catch (err) {
         console.error(err);
+    } finally {
+      loadMoreBtn.disabled = false;
+      loadMoreBtn.textContent = 'Load More'
     }
 }
-
-const toDosContainer = document.querySelector(".todoContainers");
-const totalContainer = document.querySelector('.numofTodo');
-const loadMoreBtn = document.querySelector('button');
 
 const displayTodos = async () => {
     todos = await getData(); // it can keep appending (different from ReactJS)
@@ -70,19 +75,20 @@ const displayTodos = async () => {
     // </ul>
     for (const { todo } of todos) {
         const listItem = document.createElement("li");
-        listItem.innerText = todo;
-        toDosContainer.append(listItem);
+        listItem.textContent = todo;
+        todoElement.append(listItem);
     }
     skip++;
     total = skip *LIMIT
-    totalContainer.textContent = `${total} todos`;
+    totalElement.textContent = `${total} todos`;
     if (total >= 100) {
         loadMoreBtn.style.visibility = 'hidden';
     }
 
 }
-
+// Load the first set of todos when the page loads
 displayTodos();
+// Event listener for the "Load More" button
 loadMoreBtn.addEventListener('click', displayTodos);
 
 
