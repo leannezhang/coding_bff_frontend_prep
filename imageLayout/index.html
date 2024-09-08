@@ -1,0 +1,46 @@
+<!-- 
+ Atlassian Karat Interview
+Given a title, image, description, and metadata of a post, we want to adjust the UI to match the expected interface.
+
+The final product should have the following:
+- Bold title.
+- Centered title.
+- The image should have a total of 30% of the width of the viewport.
+- The image height should be equal to the width.
+- The image should be positioned on the left side.
+- The description should be positioned on the right side of the image and should take all the available width.
+- The metadata should be aligned at the bottom right corner.
+
+Title: Lorem ipsum title.
+Image: https://public.karat.io/content/an-image_.png
+Description: In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.
+Metadata: Published: 12/12/2012 | Views: 22
+-->
+<head> 
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content-after-loading="width=device-width, initial-scale=1.0" /> 
+    <link rel="stylesheet" href="style.css" /> 
+    <title> 
+        Atlassian Karat - Images
+      </title> 
+</head> 
+
+<div class="expected-output">
+    <hr />
+    <img src="https://public.karat.io/content/front-end-coding-exercises/post-list-view.png" />
+    <hr /><br /><br />
+  </div>
+  
+  
+  <div id="root">
+    <h2 class="title">Lorem ipsum title. </h2>
+    <div class="contentContainer">
+      <div class="imageContainer">
+        <img  src="https://public.karat.io/content/an-image_.png" class="laptopImg" alt="image"/>
+      </div>
+      <div class="right">
+        <div class="description">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</div>
+        <div class="footer"> Published: 12/12/2012 | Views: 22</div>
+      <div>
+    <div>
+  </div>
