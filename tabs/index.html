@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabs</title>
+<style>
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.item {
+    cursor: pointer;
+}
+
+.item:hover {
+    background-color: lightgoldenrodyellow;
+}
+
+.item:active {
+    background-color: goldenrod;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <!-- https://www.greatfrontend.com/questions/user-interface/tabs -->
+    <!-- Solution 1: show all menu and descriptions in html, hide and show using css-->
+    <!-- Example: https://codepen.io/leannezhang/pen/rjRaaw?editors=1111 -->
+    <!-- Pro: Fast, This works for 30mins interview. Cons: doesn't show dynamically -->
+    <!-- 1. onclick showDescription('HTML') this needs to be in text format-->
+     
+    <!-- Solution 2: store in { label: description }. Show text content when clicked -->
+    <!-- See below. -->
+    <!-- showDescription('HTML') HTML should be a string -->
+    <!-- document.querySelector(".description") select the first element it sees -->
+     <div class="menu">
+    
+        <button class="item" onclick="showDescription('HTML')">HTML</button>
+        <button class="item" onclick="showDescription('CSS')">CSS</button>
+        <button class="item" onclick="showDescription('JavaScript')">JavaScript</button>
+     </div>
+     <div>
+        <p class="description">
+            The HyperText Markup Language or HTML is the
+            standard markup language for documents designed to
+            be displayed in a web browser.
+        </p>
+      </div>
+</div>
+<script src="./script.js"></script>
+</body>
+</html>
+
