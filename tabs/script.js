@@ -11,6 +11,22 @@ const data = {
             and CSS.`}
 }
 
+const menuContainer = document.getElementsByClassName("menu")[0];
+
+{/* Create button that looks like this
+    <button class="item" onclick="showDescription('HTML')">HTML</button> */}
+function createMenus() {
+    for (let label in data) {
+        const buttonElement = document.createElement("button");
+        buttonElement.classList = "item";
+        buttonElement.innerText = label;
+        menuContainer.appendChild(buttonElement);
+    }
+}
+
+
+createMenus();
+
 function showDescription(key) {
     let descriptionText = "";
     if (data[key]) {
@@ -20,3 +36,9 @@ function showDescription(key) {
     let descriptionElement =  document.querySelector(".description");
     descriptionElement.textContent = descriptionText;
 }
+
+menuContainer.addEventListener('click', (event) => {
+    const label = event.target.innerText; // select button innerText for me (HTML, CSS, JavaScript)
+    showDescription(label);
+})
+
